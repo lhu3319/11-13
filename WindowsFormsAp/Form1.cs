@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Collections;
 namespace WindowsFormsAp
 {
     public partial class Form1 : Form
@@ -56,6 +56,7 @@ namespace WindowsFormsAp
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = System.Windows.Forms.View.Details;
 
+            /*
             ListViewItem item1 = new ListViewItem("item1", 0);
             // Place a check mark next to the item.
            
@@ -73,12 +74,74 @@ namespace WindowsFormsAp
             item3.SubItems.Add("8");
             item3.SubItems.Add("9");
 
+
            // listView1.Items.AddRange(new ListViewItem[] { item1, item2, item3 });
             listView1.Items.Add(item1);
             listView1.Items.Add(item2);
             listView1.Items.Add(item3);
+            */
+            ArrayList arry = new ArrayList();
+            arry.Add(new Items(new string[] { "item1", "1", "2" }));
+            arry.Add(new Items(new string[] { "item2", "4", "5" }));
+            arry.Add(new Items(new string[] { "item3", "7", "8" }));
+            ListViewItem item;
+            for (int i = 0; i < 3; i++)
+            {
+                Items row = (Items)arry[i];
+                item = new ListViewItem(row.Col1);
+                item.SubItems.Add(row.Col2);
+                item.SubItems.Add(row.Col3);
+                listView1.Items.Add(item);
+            }
+
             Controls.Add(listView1);
         }
 
     }
+    public class Items
+    {
+        string col1;
+        string col2;
+        string col3;
+        public Items(string[] a)
+        {
+            col1 = a[0];
+            col2 = a[1];
+            col3 = a[2];
+        }
+        public string Col1
+        {
+            get { return col1; }
+        }
+        public string Col2
+        {
+            get { return col2; }
+        }
+        public string Col3
+        {
+            get { return col3; }
+        }
+
+        /*
+        public Items(string[] a)
+        {
+            col1 = a[0];
+            col2 = a[1];
+            col3 = a[2];
+        }
+        public string getCol1()
+        {
+            return col1;
+        }
+        public string getCol2()
+        {
+            return col2;
+        }
+        public string getCol3()
+        {
+            return col3;
+        }
+        */
+    }
+
 }
