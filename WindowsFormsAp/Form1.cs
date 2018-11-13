@@ -48,6 +48,7 @@ namespace WindowsFormsAp
             listView1.Columns.Add("Column 3", -2, HorizontalAlignment.Left);
             listView1.Columns.Add("Column 4", -2, HorizontalAlignment.Center);
             */
+
             listView1.GridLines = true;
             listView1.Location = new System.Drawing.Point(1, -2);
             listView1.Name = "listView1";
@@ -80,6 +81,7 @@ namespace WindowsFormsAp
             listView1.Items.Add(item2);
             listView1.Items.Add(item3);
             */
+            
             ArrayList arry = new ArrayList();
             arry.Add(new Items(new string[] { "item1", "1", "2" }));
             arry.Add(new Items(new string[] { "item2", "4", "5" }));
@@ -93,6 +95,12 @@ namespace WindowsFormsAp
                 item.SubItems.Add(row.Col3);
                 listView1.Items.Add(item);
             }
+            string txt = "";
+            foreach(ColumnHeader ch in listView1.Columns)
+            {
+                txt += ch.Text + " ";
+            }
+            MessageBox.Show(txt);
 
             Controls.Add(listView1);
         }
