@@ -86,6 +86,12 @@
     <Compile Include="mysqltest.Designer.cs">
       <DependentUpon>mysqltest.cs</DependentUpon>
     </Compile>
+    <Compile Include="mysqltest2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mysqltest2.Designer.cs">
+      <DependentUpon>mysqltest2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form4.resx">
